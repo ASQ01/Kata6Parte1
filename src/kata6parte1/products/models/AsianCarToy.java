@@ -1,12 +1,12 @@
-package kata6parte1.models;
+package kata6parte1.products.models;
 
 import kata6parte1.toyproduct.Toy;
 
-public class HelicopterToy implements Toy{
+public class AsianCarToy implements Toy{
     private final int serialNumber;
-    private final String type = "Helicopter";
+    private final String type = "Asian Car";
     
-    public HelicopterToy(int serial){
+    public AsianCarToy(int serial){
         this.serialNumber = serial;
     }
     
