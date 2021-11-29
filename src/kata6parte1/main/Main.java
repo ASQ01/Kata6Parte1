@@ -8,7 +8,7 @@ import kata6parte1.toys.*;
 public class Main {
     public static void main(String[] args){
         SerialNumberGenerator serial = new SerialNumberGenerator();
-        ArrayList<Car> cars = new ArrayList<>();
+        ToyBusiness business = new ToyBusiness();
         
         Scanner input = new Scanner(System.in);
         String choice = "";
@@ -17,15 +17,11 @@ public class Main {
             choice = input.nextLine();
             switch(choice.toUpperCase()){
                 case "CAR":
-                    Car car = new Car(serial.next());
-                    car.pack();
-                    car.label();
+                    Car car = business.createCar();
                     break;
                     
                 case "HELICOPTER":
-                    Helicopter helicopter = new Helicopter(serial.next());
-                    helicopter.pack();
-                    helicopter.label();
+                    Helicopter helicopter = business.createHelicopter();
                     break;
                     
                 case "EXIT":
