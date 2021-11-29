@@ -1,4 +1,6 @@
 package kata6parte1.main;
+import kata6parte1.models.HelicopterToy;
+import kata6parte1.models.CarToy;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -15,23 +17,7 @@ public class Main {
         while (!choice.toUpperCase().equals("EXIT")){
             System.out.print("Toy to create: ");
             choice = input.nextLine();
-            switch(choice.toUpperCase()){
-                case "CAR":
-                    Car car = business.createCar();
-                    break;
-                    
-                case "HELICOPTER":
-                    Helicopter helicopter = business.createHelicopter();
-                    break;
-                    
-                case "EXIT":
-                    System.out.println("Goodbye");
-                    break;
-                    
-                default:
-                    System.out.println("Not recognizeable toy");
-                    break;
-            }
+            business.createToy(choice);
         }
         System.exit(0);
     }

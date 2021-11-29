@@ -1,17 +1,21 @@
-package kata6parte1.toys;
+package kata6parte1.models;
 
-public class Helicopter {
+import kata6parte1.toyproduct.Toy;
+
+public class CarToy implements Toy{
     private final int serialNumber;
-    private final String type = "Helicopter";
+    private final String type = "Car";
     
-    public Helicopter(int serial){
+    public CarToy(int serial){
         this.serialNumber = serial;
     }
     
+    @Override
     public void pack(){
         System.out.printf("Packing '%s' '%d'\n", this.type, this.serialNumber);
     }
     
+    @Override
     public void label(){
         System.out.printf("Labelling '%s' '%d'\n", this.type, this.serialNumber);
     }
