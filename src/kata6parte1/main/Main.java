@@ -8,7 +8,11 @@ import kata6parte1.factories.regionalfactories.*;
 public class Main {
     public static void main(String[] args){
         SerialNumberGenerator serial = new SerialNumberGenerator();
-        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
+        ToyBusiness business = new ToyBusiness();
+        business.addFactory("AmCar", new AmericanCarToyFactory());
+        business.addFactory("AmHelicopter", new AmericanHelicopterToyFactory());
+        business.addFactory("Ascar", new AsianCarToyFactory());
+        business.addFactory("AsHelicopter", new AsianHelicopterToyFactory());
         
         Scanner input = new Scanner(System.in);
         String choice = "";
