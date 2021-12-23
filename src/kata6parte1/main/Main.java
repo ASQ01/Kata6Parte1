@@ -1,21 +1,21 @@
 package kata6parte1.main;
 import kata6parte1.business.ToyBusiness;
-import kata6parte1.business.SerialNumberGenerator;
+import kata6parte1.factories.SerialNumberGenerator;
 import java.util.Scanner;
-import kata6parte1.branches.*;
+import kata6parte1.factories.regionalfactories.*;
 
 
 public class Main {
     public static void main(String[] args){
         SerialNumberGenerator serial = new SerialNumberGenerator();
-        ToyBusiness business = new AsianToyBusiness();
+        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
         
         Scanner input = new Scanner(System.in);
         String choice = "";
         while (!choice.toUpperCase().equals("EXIT")){
             System.out.print("Toy to create: ");
             choice = input.nextLine();
-            business.createToy(choice);
+            business.produceToy(choice);
         }
         System.exit(0);
     }

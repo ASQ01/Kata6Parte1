@@ -1,9 +1,16 @@
 package kata6parte1.business;
 
+import kata6parte1.factories.ToyFactory;
 import kata6parte1.toyproduct.Toy;
 
-public abstract class ToyBusiness {
-    protected final SerialNumberGenerator serial = new SerialNumberGenerator();
+public class ToyBusiness {
+    private final ToyFactory factory;
     
-    public abstract Toy createToy(String type);
+    public ToyBusiness(ToyFactory factory){
+        this.factory = factory;
+    }
+    
+    public Toy produceToy(String type){
+        return this.factory.produceToy(type);
+    }
 }
